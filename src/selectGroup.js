@@ -94,7 +94,6 @@ export default class SelectGroup extends React.Component {
                                         key={index}
                                         value={info}
                                         onClick={(event) => {
-                                            console.log('selected');
                                             this.props.onSelect(event, info);
                                             this.setState({open: false});
                                         }}
@@ -107,5 +106,14 @@ export default class SelectGroup extends React.Component {
             </React.Fragment>
 
         );
+    }
+}
+
+SelectGroup.defaultProps = {
+    data: [],
+    title: null,
+    selected: null,
+    onSelect: () => {
+
     }
 }
