@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {MaskedInput} from '../utils';
+import {MaskedInput} from './utils';
 
 const Input = styled(MaskedInput) `
     border: 1px solid rgba(0,0,0,0.1);

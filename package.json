@@ -1,6 +1,6 @@
 {
     "name": "@brunocangs/basic-ui-kit",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "A basic UI kit with Text, Button, Checkmark, Radio and a Dropdown",
     "main": "dist/index.js",
     "scripts": {

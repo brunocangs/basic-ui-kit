@@ -11,6 +11,12 @@ This package has no default exports, and has 7 named exports
 * RadioGroup
 * SelectGroup
 * SelectItem
+* MaskedTextInput
+
+You can also import, from the /utils folder
+
+* mask, masking function, called with string interpolation. Example: \`(${2}) ${4}-${4}\`
+* MaskedInput, a basic, unstyled input that provides automatic masking logic, similar to #MaskedTextInput
 
 ## API
 
@@ -47,3 +53,16 @@ All components are controlled by props, and accept
 * title, optional title to be displayed on top of the input
 * width, optional to control width of input
 
+### MaskedTextInput
+
+* onChange, function called with (event)
+* value, controlled input value
+* title (optional)
+* width, optional to control width of input
+* mask, a mask to be aplied, use characters and {number} to specify size of the substring
+* clearRegex, regex to be used to remove the mask
+
+
+# Demo
+
+For a live demo head [here](https://brunocangs.github.io/basic-ui-kit/)
