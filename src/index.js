@@ -5,3 +5,4 @@ export {default as Radio} from './radio';
 export {default as RadioGroup} from './radioGroup';
 export {default as SelectGroup} from './selectGroup';
 export {default as SelectItem} from './selectItem';
+export {default as MaskedTextInput} from './maskedTextInput';

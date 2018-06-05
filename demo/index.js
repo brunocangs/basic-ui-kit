@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react';
-import {Button, TextInput, ChoiceField, RadioGroup, SelectGroup, SelectItem} from '../src';
+import {Button, TextInput, ChoiceField, RadioGroup, SelectGroup, SelectItem, MaskedTextInput} from '../src';
 import {ThemeProvider} from 'styled-components';
 import {darken, lighten} from 'polished';
 import {render} from 'react-dom'
@@ -27,7 +27,8 @@ class App extends Component {
             checked: false,
             radioSelected: null,
             color: '#000',
-            selectOption: null
+            selectOption: null,
+            maskedValue: ''
         };
         this.handleColorChange = this.handleColorChange.bind(this);
     }
@@ -43,6 +44,7 @@ class App extends Component {
         this.setState({theme: {...this.state.theme, ...colors}});
     }
     render () {
+        let regex = /[()\-\s]/g;
         console.log(this.state);
         return (
             <ThemeProvider theme={this.state.theme}>
@@ -50,20 +52,20 @@ class App extends Component {
                     <style>
                         {`body {
                             background: ${this.state.theme.background};
-                        }
-                        *{
-                            font-family: 'Roboto', sans-serif;    
-                            color: ${this.state.theme.textColor}
+                            height: 3000px;
                         }
                         *{
                             outline: none;
+                            font-family: 'Roboto', sans-serif;    
+                            color: ${this.state.theme.textColor}
                         }
                         `}
                     </style>
+                    <input type="color" value={this.state.theme.primary} id='primary' onChange={this.handleColorChange} />
+                    <br />
                     <Button flat width={400}>
                         this is a flat button
                                 </Button>
-                    <input type="color" value={this.state.theme.primary} id='primary' onChange={this.handleColorChange} />
                     <br />
                     <br />
                     <Button width={400}>
@@ -92,6 +94,19 @@ class App extends Component {
                         value={this.state.selectOption}
                         width={200}
                         title="Test"
+                    />
+                    <br />
+                    <br />
+                    <MaskedTextInput
+                        title={'Masked'}
+                        width={400}
+                        value={this.state.maskedValue}
+                        mask='({2}) {5}-{4}'
+                        clearRegex={regex}
+                        onChange={(event, value) => {
+                            console.log(value);
+                            this.setState({maskedValue: value})
+                        }}
                     />
                 </Fragment>
             </ThemeProvider>

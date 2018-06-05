@@ -4,7 +4,7 @@ export default styled.button`
     background-color: ${(props) => (props.flat ? 'white' : props.theme.primary)};
     color: ${(props) => (props.flat ? props.theme.primary : 'white')};
     border: ${(props) => (props.flat) ? `1px solid ${props.theme.primary}` : 0};
-    height: 40;
+    height: 40px;
     border-radius: ${(props) => {
         if (props.fullWidth) {
             return 0;

@@ -21,16 +21,33 @@ const Dropdown = styled.div`
     overflow-y: auto;
     max-height: ${props => props.open ? '120px' : '0px'};
     transition: max-height 0.3s;
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+    &::-webkit-scrollbar-track {
+        border-radius: 4px;
+        background: transparent; 
+        box-shadow: 0px 0px 2px rgba(0,0,0,0.2) inset;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: rgba(0,0,0,0.2); 
+        border-radius: 4px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background: rgba(0,0,0,0.3); 
+    }
 `;
 const Wrapper = styled.div`
     position: relative;
-    width: ${props => props.width || '100%'};
+    width: ${props => props.width + 'px' || '100%'};
     background: transparent;
 `;
 
 const Arrow = styled.div`
     width: 0; 
     height: 0; 
+    right: 10px;
+    top: 12px;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     border-bottom: 8px solid #aeaeae;
@@ -38,8 +55,6 @@ const Arrow = styled.div`
     position: absolute;
     transition: all 0.3s;
     z-index: 50;
-    right: 10;
-    top: 12;
 `;
 
 const Title = styled.div`

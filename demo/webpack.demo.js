@@ -20,6 +20,7 @@ module.exports = {
             }
         ]
     },
+    devtool: 'eval-source-map',
     mode: 'production',
     plugins: [
         new HtmlWebpackPlugin({
