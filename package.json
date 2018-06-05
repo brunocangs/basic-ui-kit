@@ -4,7 +4,7 @@
     "description": "A basic UI kit with Text, Button, Checkmark, Radio and a Dropdown",
     "main": "dist/index.js",
     "scripts": {
-        "prepublish": "babel src -d dist --presets=env,react",
+        "prepublish": "babel src -d dist --ignore utils/ --presets=env,react && babel src/utils -d utils --presets=env,react",
         "test": "echo \"Error: no test specified\" && exit 1",
         "build:demo": "cd demo && node build.js"
     },
