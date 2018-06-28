@@ -11,7 +11,6 @@ export default class SelectItem extends React.Component {
     render () {
         return (
             <Wrapper className={this.props.className} value={this.props.value} onClick={(e) => {
-                console.log('clicked from item');
                 this.props.onClick(e, this.props.value);
             }}
             >

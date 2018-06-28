@@ -33,19 +33,16 @@ class App extends Component {
         this.handleColorChange = this.handleColorChange.bind(this);
     }
     handleColorChange ({target: {id, value}}) {
-        console.log(id, value);
         let colors = {
 
         };
         colors[id] = value;
         colors[id + 'Dark'] = darken(0.05, value);
         colors[id + 'Bright'] = lighten(0.1, value);
-        console.log(colors);
         this.setState({theme: {...this.state.theme, ...colors}});
     }
     render () {
         let regex = /[()\-\s]/g;
-        console.log(this.state);
         return (
             <ThemeProvider theme={this.state.theme}>
                 <Fragment>
@@ -104,7 +101,6 @@ class App extends Component {
                         mask='({2}) {5}-{4}'
                         clearRegex={regex}
                         onChange={(event, value) => {
-                            console.log(value);
                             this.setState({maskedValue: value})
                         }}
                     />

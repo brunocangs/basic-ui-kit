@@ -1,7 +1,5 @@
 let mask = function (strings, ...pieces) {
-    console.log(strings, pieces);
     const string = pieces.pop();
-    console.log(strings, pieces, string);
     let a = pieces.reduce((previous, current, index) => {
         const fragment = string.slice(previous.sum, previous.sum + Number(current));
         previous.sum += Number(current);
