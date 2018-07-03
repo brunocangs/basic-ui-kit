@@ -2,7 +2,7 @@ import React from 'react';
 import {mask} from '../utils';
 
 export default function MaskedInput (props) {
-    let {mask: pattern, value, onChange, clearRegex} = props;
+    let {mask: pattern, value, onChange, clearRegex, ...otherProps} = props;
     let clearMask = (value) => {
         return value.replace(clearRegex, '');
     }
@@ -25,7 +25,7 @@ export default function MaskedInput (props) {
     return (
         <input
             type='text' 
-            {...props}
+            {...otherProps}
             onChange={(event) => {
                 onChange(event, clearMask(event.target.value));
             }}
