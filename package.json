@@ -4,7 +4,7 @@
     "description": "A basic UI kit with Text, Button, Checkmark, Radio and a Dropdown",
     "main": "dist/index.js",
     "scripts": {
-        "prepublish": "babel src -d dist --ignore utils/ --presets=env,react && babel src/utils -d utils --presets=env,react",
+        "prepublish": "babel src -d dist --ignore utils/ --presets=env,react,stage-0 && babel src/utils -d utils --presets=env,react",
         "test": "echo \"Error: no test specified\" && exit 1",
         "build:demo": "cd demo && node build.js"
     },
@@ -33,6 +33,7 @@
         "babel-plugin-transform-object-rest-spread": "^6.26.0",
         "babel-preset-env": "^1.7.0",
         "babel-preset-react": "^6.24.1",
+        "babel-preset-stage-0": "^6.24.1",
         "html-webpack-plugin": "^3.2.0",
         "react-dom": "^16.4.0",
         "webpack": "^4.9.1"
