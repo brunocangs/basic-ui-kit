@@ -26,6 +26,9 @@ export default function MaskedInput (props) {
         <input
             type='text' 
             {...otherProps}
+            ref={(input) => {
+                props.refCreator ? props.refCreator(input, props.id, props.tab) : React.createRef();
+            }}
             onChange={(event) => {
                 onChange(event, clearMask(event.target.value));
             }}
